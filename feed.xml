@@ -9,7 +9,8 @@
 			<item>
 				<title>Welcome</title>
 				<description>&lt;h2 id=&quot;hello&quot;&gt;Hello!&lt;/h2&gt;
-&lt;h2 id=&quot;this-is-my-blog&quot;&gt;This is my blog.&lt;/h2&gt;
+&lt;p&gt;This is my blog.&lt;/p&gt;
+
 &lt;p&gt;I’m not too sure what I’m going to be using this for just yet, but the topics will likely range from writeups about programs I create to rants about what’s got me frustrated recently. Expect quite a variety!&lt;/p&gt;
 
 &lt;p&gt;I already have a couple of ideas for posts including sharing my experience developing &lt;a href=&quot;https://getentropy.tylerdakin.com&quot;&gt;Entropy&lt;/a&gt; and I’d love to build a habit of sharing my experiences as I create them. I think that’s a great way to really delve deep into what you’re learning.&lt;/p&gt;
