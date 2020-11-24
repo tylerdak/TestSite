@@ -8,7 +8,7 @@
 		
 			<item>
 				<title>Building a &quot;Message of the Day&quot; Component for Your App</title>
-				<description>&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-minecraftSplash.png&quot; alt=&quot;An example of Minecraft's splash text.&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+				<description>&lt;p&gt;&lt;img style=&quot;width: 100%; height: auto;&quot; src=&quot;/assets/blog/motd-minecraftSplash.png&quot; alt=&quot;An example of Minecraft's splash text.&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;if-youve-played-minecraft-you-might-remember-the-splash-text-on-the-main-menu-that-shows-a-random-bit-of-text-every-time-you-get-to-that-screen-lets-try-creating-something-similar-using-json-that-we-can-implement-in-our-app-to-say-hello-to-our-users&quot;&gt;If you’ve played Minecraft, you might remember the splash text on the Main Menu that shows a random bit of text every time you get to that screen. Let’s try creating something similar using JSON that we can implement in our app to say hello to our users!&lt;/h3&gt;
 
@@ -27,7 +27,7 @@
 
 &lt;p&gt;I’ll be doing this with an iOS app and Swift because I think it’s particularly useful in that medium and it’s where I’ve done this before. There are many mediums in which you could deploy this feature as long as you have the ability to parse JSON or get text stored at a web address.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-entropy.jpg&quot; alt=&quot;How Entropy looks with splash text. The splash text is the second line only with the first line present even without any splash text provided.&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-entropy.jpg&quot; alt=&quot;How Entropy looks with splash text. The splash text is the second line only with the first line present even without any splash text provided.&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-the-inconvenient-method-&quot;&gt;&lt;a style=&quot;text-decoration: none;&quot; href=&quot;&quot; name=&quot;old&quot;&gt; The Inconvenient Method &lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;When I originally began preparing Entropy for its beta period and release, I did not know how to write HTML, CSS, or JS (my JS is still questionable!). In addition, for any prior websites I wanted to make for myself I had used Weebly, a drag and drop website builder that offered free websites if you used their domain. Entropy’s website is still being hosted by them at &lt;a href=&quot;https://entropy.tylerdakin.com&quot;&gt;entropyapp.weebly.com&lt;/a&gt; (although I now wrap that link with my own domain whenever I mention it 😉).&lt;/p&gt;
@@ -62,7 +62,7 @@
 
 &lt;p&gt;I’ve left out some formatting, but that’s the gist of it. The problem with this is that it relies on Weebly’s Paragraph blocks having the class “div.paragraph”. If they ever change that, my app will just catch the error and not deliver the message. Luckily, these aren’t very high stakes. However, this method still isn’t convenient because it’s a pain in the arse to log in to my Weebly account, just to write a few lines of text, and then have to remember when to change it back (especially if it’s holiday related; Entropy was celebrating Halloween for most of November 2019 thanks to this method and my poor memory!). So, with that, let’s get into making this a lot simpler for myself!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-weebly.png&quot; alt=&quot;A photo of where I update Entropy's splash text.&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-weebly.png&quot; alt=&quot;A photo of where I update Entropy's splash text.&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Fun Fact:&lt;/strong&gt; While editing this I found a bug in Entropy where if there is nothing written in the Weebly paragraph block and Entropy tries to grab the splash text (which it does often), the app crashes! Good thing I’m about to completely change the method instead of fixing that one bug. 😄&lt;/p&gt;
 
@@ -215,7 +215,7 @@ extension ViewController {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Mind you, I’ll have the full repo with all of these methods linked below as well. We should be set to run it now. Double-check that a call to retrieveMOTD() is in the viewDidLoad() or that it can be triggered some other way and try it out. You should see that when you call retrieveMOTD(), the text changes to whatever message you put in your JSON!
-&lt;img src=&quot;/assets/blog/motd-firstdemo.png&quot; alt=&quot;The app now displays our 'Happy Holidays' message!&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/blog/motd-firstdemo.png&quot; alt=&quot;The app now displays our 'Happy Holidays' message!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-removing-the-json-&quot;&gt;&lt;a style=&quot;text-decoration: none;&quot; href=&quot;&quot; name=&quot;text&quot;&gt; Removing the JSON &lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Okay, this is a great system and it has room for expansion. I’d argue that the expansion potential makes it the best solution. However, what if you really, really, don’t plan to expand this feature? Let’s try accomplishing this with just a text file. We’re going to use the same message but this time we’re going to upload to “https://YOURHOST/motd.txt” and we’ll have to change our Swift code to make it compatible. The benefits of this method are that it’s easier to change the message, because it’s just plain text, there’s no formatting, and the Swift code might end up being smaller. Let’s get into it.&lt;/p&gt;
@@ -253,7 +253,7 @@ catch {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And now our work is done! Again, this probably feels easier, and I’d say it is, but the JSON method allows for easy expansion later on and JSON is the standard format for other APIs that you’ll use. It’s definitely good to know. With that, though, let’s launch the app. You should see your message on screen once it’s been loaded.
-&lt;img src=&quot;/assets/blog/motd-textdemo.png&quot; alt=&quot;The app now displays our 'Happy Holidays from a text file' message!&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/blog/motd-textdemo.png&quot; alt=&quot;The app now displays our 'Happy Holidays from a text file' message!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-adding-randomness-&quot;&gt;&lt;a style=&quot;text-decoration: none;&quot; href=&quot;&quot; name=&quot;random&quot;&gt; Adding Randomness &lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Now, this system is really cool and should be easy to update. However, it’s not quite the same as the Minecraft example I showed earlier. What if we don’t want to update it often? What if, instead, we want the app to keep those messages fresh by showing a random one each time? This is the last part I’d like to show and the text format I just showed you is probably a great format to implement this feature with. Instead of just one line that we show to the user every time, we’ll write a bunch of phrases, one line for each, that we can then pick randomly from on the app. Every time the user loads the app, a new phrase will be shown.&lt;/p&gt;
@@ -300,7 +300,7 @@ It's the most wonderful time of the year!
 
 &lt;p&gt;You might notice that retrieveTextFromURL doesn’t rely on anything in our ViewController which means you don’t actually have to have it in the extension. Moving it outside allows you to call it from anywhere and you could even use it as a quick solution for future projects. I’d recommend selecting the whole function, secondary-clicking, and then choosing “Create Code Snippet” in Xcode to save that function for future use.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-snippet.png&quot; alt=&quot;retrieveTextFromURL being added to the Xcode Snippets Library.&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-snippet.png&quot; alt=&quot;retrieveTextFromURL being added to the Xcode Snippets Library.&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Okay, now that we’ve created that function, getting our text should be simple! Just call retrieveTextFromURL within getSplashText and make sure you have the URL as a String in the parameters. For now, print the result to make sure we get what we’re expecting. Run the code, but make sure you’ve added a way to run getSplashText, whether that be changing viewDidLoad or adding a button to call it:&lt;/p&gt;
 
@@ -324,7 +324,7 @@ It's the most wonderful time of the year!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And that should be it! Run your code, if the previous test worked fine, this should work as well. Trigger the getSplashText method a few times to make sure it’s not picking the same one every time! 
-&lt;img src=&quot;/assets/blog/motd-randomdemo.png&quot; alt=&quot;One of the random phrases has been chosen properly!&quot; width=&quot;750&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/blog/motd-randomdemo.png&quot; alt=&quot;One of the random phrases has been chosen properly!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-wrap-up-&quot;&gt;&lt;a style=&quot;text-decoration: none;&quot; href=&quot;&quot; name=&quot;wrap&quot;&gt; Wrap Up &lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;This was more than I was expecting to write for my first post but I enjoyed it! Please let me know what you thought, if it was too long, if I should go further or less into detail, or any other criticisms you might have for me! I’m always reachable on &lt;a href=&quot;https://twitter.tylerdakin.com&quot;&gt;Twitter (@_tylerdakin)&lt;/a&gt; or by email at &lt;a href=&quot;mailto:dakint@icloud.com&quot;&gt;dakint@icloud.com&lt;/a&gt;.&lt;/p&gt;
