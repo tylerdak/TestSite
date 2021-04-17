@@ -3,8 +3,8 @@
 	<channel>
 		<title>Tyler Dakin - The Website</title>
 		<description>Tyler Dakin's website</description>		
-		<link>http://localhost:4000</link>
-		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		<link>https://site.tylerdakin.com</link>
+		<atom:link href="https://site.tylerdakin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Building a &quot;Message of the Day&quot; Component for Your App</title>
@@ -334,8 +334,8 @@ It's the most wonderful time of the year!
 &lt;p&gt;&lt;a href=&quot;https://github.com/tylerdak/Blog-MOTD&quot;&gt;Click here to check out the associated repo for this post.&lt;/a&gt;&lt;/p&gt;
 </description>
 				<pubDate>Sun, 22 Nov 2020 00:00:00 -0500</pubDate>
-				<link>http://localhost:4000/2020/11/22/motd.html</link>
-				<guid isPermaLink="true">http://localhost:4000/2020/11/22/motd.html</guid>
+				<link>https://site.tylerdakin.com/2020/11/22/motd.html</link>
+				<guid isPermaLink="true">https://site.tylerdakin.com/2020/11/22/motd.html</guid>
 			</item>
 		
 			<item>
@@ -350,8 +350,8 @@ It's the most wonderful time of the year!
 &lt;p&gt;I’m creating blog posts with Markdown so it’s really easy to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;show you my code inline with the posts&lt;/code&gt;! If you’re reading this, I should have an RSS feed up and running and it is hopefully linked at the bottom of the page. Feel free to add that to your RSS reader!&lt;/p&gt;
 </description>
 				<pubDate>Tue, 20 Oct 2020 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/2020/10/20/welcome.html</link>
-				<guid isPermaLink="true">http://localhost:4000/2020/10/20/welcome.html</guid>
+				<link>https://site.tylerdakin.com/2020/10/20/welcome.html</link>
+				<guid isPermaLink="true">https://site.tylerdakin.com/2020/10/20/welcome.html</guid>
 			</item>
 		
 	</channel>
