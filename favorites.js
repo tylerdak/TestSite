@@ -50,7 +50,7 @@ function getCurrentData() {
 }
 
 function updateListing() {
-    records.sort((a, b) => (a.fields.date > b.fields.date) ? 1 : -1)
+    records.sort((a, b) => (a.fields.date > b.fields.date) ? -1 : 1) // Gives precedence to a if -1 is returned
 
     for (record in records) {
         fields = records[record].fields
