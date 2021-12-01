@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tyler Dakin - The Website</title>
-		<description>Tyler Dakin's website</description>		
+		<description>Tyler Dakin&apos;s website</description>		
 		<link>https://site.tylerdakin.com</link>
 		<atom:link href="https://site.tylerdakin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Building a &quot;Message of the Day&quot; Component for Your App</title>
-				<description>&lt;p&gt;&lt;img style=&quot;width: 100%; height: auto;&quot; src=&quot;/assets/blog/motd-minecraftSplash.png&quot; alt=&quot;An example of Minecraft's splash text.&quot; /&gt;&lt;/p&gt;
+				<description>&lt;p&gt;&lt;img style=&quot;width: 100%; height: auto;&quot; src=&quot;/assets/blog/motd-minecraftSplash.png&quot; alt=&quot;An example of Minecraft&apos;s splash text.&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;if-youve-played-minecraft-you-might-remember-the-splash-text-on-the-main-menu-that-shows-a-random-bit-of-text-every-time-you-get-to-that-screen-lets-try-creating-something-similar-using-json-that-we-can-implement-in-our-app-to-say-hello-to-our-users&quot;&gt;If you’ve played Minecraft, you might remember the splash text on the Main Menu that shows a random bit of text every time you get to that screen. Let’s try creating something similar using JSON that we can implement in our app to say hello to our users!&lt;/h3&gt;
 
@@ -62,7 +62,7 @@
 
 &lt;p&gt;I’ve left out some formatting, but that’s the gist of it. The problem with this is that it relies on Weebly’s Paragraph blocks having the class “div.paragraph”. If they ever change that, my app will just catch the error and not deliver the message. Luckily, these aren’t very high stakes. However, this method still isn’t convenient because it’s a pain in the arse to log in to my Weebly account, just to write a few lines of text, and then have to remember when to change it back (especially if it’s holiday related; Entropy was celebrating Halloween for most of November 2019 thanks to this method and my poor memory!). So, with that, let’s get into making this a lot simpler for myself!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-weebly.png&quot; alt=&quot;A photo of where I update Entropy's splash text.&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/motd-weebly.png&quot; alt=&quot;A photo of where I update Entropy&apos;s splash text.&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Fun Fact:&lt;/strong&gt; While editing this I found a bug in Entropy where if there is nothing written in the Weebly paragraph block and Entropy tries to grab the splash text (which it does often), the app crashes! Good thing I’m about to completely change the method instead of fixing that one bug. 😄&lt;/p&gt;
 
@@ -215,7 +215,7 @@ extension ViewController {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Mind you, I’ll have the full repo with all of these methods linked below as well. We should be set to run it now. Double-check that a call to retrieveMOTD() is in the viewDidLoad() or that it can be triggered some other way and try it out. You should see that when you call retrieveMOTD(), the text changes to whatever message you put in your JSON!
-&lt;img src=&quot;/assets/blog/motd-firstdemo.png&quot; alt=&quot;The app now displays our 'Happy Holidays' message!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/blog/motd-firstdemo.png&quot; alt=&quot;The app now displays our &apos;Happy Holidays&apos; message!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-removing-the-json-&quot;&gt;&lt;a style=&quot;text-decoration: none;&quot; href=&quot;&quot; name=&quot;text&quot;&gt; Removing the JSON &lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Okay, this is a great system and it has room for expansion. I’d argue that the expansion potential makes it the best solution. However, what if you really, really, don’t plan to expand this feature? Let’s try accomplishing this with just a text file. We’re going to use the same message but this time we’re going to upload to “https://YOURHOST/motd.txt” and we’ll have to change our Swift code to make it compatible. The benefits of this method are that it’s easier to change the message, because it’s just plain text, there’s no formatting, and the Swift code might end up being smaller. Let’s get into it.&lt;/p&gt;
@@ -231,7 +231,7 @@ extension ViewController {
 &lt;p&gt;In the RetrieveMOTD file, within the extension to your class (ViewController), add another function called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;retrieveMOTDasText&lt;/code&gt;. This function is going to be a lot simpler than the previous one. We still need to verify the url, so that part can be copied from the previous method (other than the URL itself, of course).&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func retrieveMOTDasText() {
-    // Put your link in for the string, instead of my link! Make sure it's the txt link!
+    // Put your link in for the string, instead of my link! Make sure it&apos;s the txt link!
     guard let url = URL(string: &quot;https://site.tylerdakin.com/motd.txt&quot;) else {
         // Visual feedback if something goes wrong
         motd = &quot;URL not valid&quot;
@@ -253,7 +253,7 @@ catch {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And now our work is done! Again, this probably feels easier, and I’d say it is, but the JSON method allows for easy expansion later on and JSON is the standard format for other APIs that you’ll use. It’s definitely good to know. With that, though, let’s launch the app. You should see your message on screen once it’s been loaded.
-&lt;img src=&quot;/assets/blog/motd-textdemo.png&quot; alt=&quot;The app now displays our 'Happy Holidays from a text file' message!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/blog/motd-textdemo.png&quot; alt=&quot;The app now displays our &apos;Happy Holidays from a text file&apos; message!&quot; style=&quot;width: 100%; height: auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-adding-randomness-&quot;&gt;&lt;a style=&quot;text-decoration: none;&quot; href=&quot;&quot; name=&quot;random&quot;&gt; Adding Randomness &lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Now, this system is really cool and should be easy to update. However, it’s not quite the same as the Minecraft example I showed earlier. What if we don’t want to update it often? What if, instead, we want the app to keep those messages fresh by showing a random one each time? This is the last part I’d like to show and the text format I just showed you is probably a great format to implement this feature with. Instead of just one line that we show to the user every time, we’ll write a bunch of phrases, one line for each, that we can then pick randomly from on the app. Every time the user loads the app, a new phrase will be shown.&lt;/p&gt;
@@ -264,8 +264,8 @@ catch {
 &lt;p&gt;Okay, let’s get into implementing this new feature. Start by creating a text file, I’ll call mine splash.txt. Add at least 5 phrases to it or copy the ones I’ve left for you below. Then, save and upload it.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;plaintext&quot;&gt;Happy Holidays!
-Season's Greetings!
-It's the most wonderful time of the year!
+Season&apos;s Greetings!
+It&apos;s the most wonderful time of the year!
 ❄️ ☃️ ⛷ 🌨
 2020 is nearly over!
 &lt;/code&gt;&lt;/pre&gt;
@@ -280,7 +280,7 @@ It's the most wonderful time of the year!
 &lt;p&gt;We already know how to grab the text from our URL, so now we just have to grab a random line from the text we get back. To make this simpler, I’m going to copy the retrieveMOTDasText method and change it to return the String it finds at the URL. I’ll also add a urlString parameter so we can change the URL as needed. Once this is done, we can just call that new method instead of copying all of the code from retrieveMOTDasText into getSplashText. Here’s what the altered method looks like:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func retrieveTextFromURL(_ urlString: String) -&amp;gt; String {
-    // No link needed here because it's provided by the caller!
+    // No link needed here because it&apos;s provided by the caller!
     guard let url = URL(string: urlString) else {
         // Visual feedback if something goes wrong
         return &quot;URL not valid&quot;
